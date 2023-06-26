@@ -33,7 +33,7 @@ const getAllProperties = async (req, res) => {
 const createProperty = async (req, res) => {
     try {
         const { title, description, propertyType, location, price, photo, email } = req.body;
-        
+        // console.log("ari")
         const session = await mongoose.startSession();
         session.startTransaction();
         const user = await User.findOne({ email }).session(session)
